@@ -1,0 +1,77 @@
+=== Extension
+
+The plugin defines an extension with the namespace `docker`.
+The following properties can be configured:
+
+[options="header"]
+|=======
+|Property name      |Type                |Default value              |Description
+|`url`              |`Property<String>`  |`unix:///var/run/docker.sock` (Unix), `tcp://127.0.0.1:2375` (Windows)                  |The server URL to connect to via Docker's remote API.
+|`certPath`         |`DirectoryProperty` |Value of environment variable `DOCKER_CERT_PATH` if set                     |The path to certificates for communicating with https://docs.docker.com/articles/https/[Docker over SSL].
+|`apiVersion`       |`Property<String>`            |`null`                     |The https://docs.docker.com/develop/sdk/#view-the-api-reference[remote API version]. For most cases this can be left null.
+|=======
+
+Image pull or push operations against the public Docker Hub registry or a private registry may require authentication. By default, existing credentials are read from `$HOME/.docker/config.json` and reused for authentication purposes. You can overwrite those credentials with the help of the `registryCredentials` closure. The credentials provided in the extension automatically become available to all custom tasks that implement the interface {uri-ghpages}/api/com/bmuschko/gradle/docker/tasks/RegistryCredentialsAware.html[RegistryCredentialsAware].
+
+[options="header"]
+|=======
+|Property name   |Type                  |Default value                 |Description
+|`url`           |`Property<String>`    |`https://index.docker.io/v1/` |The registry URL.
+|`username`      |`Property<String>`    |`null`                        |The registry username.
+|`password`      |`Property<String>`    |`null`                        |The registry password.
+|`email`         |`Property<String>`    |`null`                        |The registry email address.
+|=======
+
+==== Working With a TLS-enabled Docker Instance
+
+Starting with Docker version 1.3, TLS is enabled by default.
+Please consult the Docker documentation https://docs.docker.com/engine/security/https/["Protect the Docker daemon socket"] to set up your certificate. The following example demonstrates how to configure the plugin to use those certificates.
+Additionally, this code snippet shows how to set the user credentials.
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/basic/groovy/build.gradle[tags=extension-tls]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/basic/kotlin/build.gradle.kts[tags=extension-tls]
+----
+
+==== Working With Google Cloud And Using a Key File
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/basic/groovy/build.gradle[tags=extension-google-cloud]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/basic/kotlin/build.gradle.kts[tags=extension-google-cloud]
+----
+
+==== Working With a Docker Instance Without TLS
+
+The following example assumes that you disabled TLS on your Docker instance.
+You can do so by setting `DOCKER_TLS=no` in the file `/var/lib/boot2docker/profile`.
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/basic/groovy/build.gradle[tags=extension-without-tls]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/basic/kotlin/build.gradle.kts[tags=extension-without-tls]
+----
+
+On Unix the Docker daemon listens by default on `unix:///var/run/docker.sock`.
+
+On Windows the Docker daemon listens by default on `npipe:////./pipe/docker_engine` if this exists.
+We fall back to `tcp://127.0.0.1:2375` where the pipe does not exist.

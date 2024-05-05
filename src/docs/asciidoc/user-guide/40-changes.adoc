@@ -1,0 +1,905 @@
+== Change Log
+
+[discrete]
+=== v9.4.0 (November 29, 2023)
+
+* Expose HEALTHCHECK method to `Dockerfile` task - {uri-github}/pull/1205[PR 1205]
+
+[discrete]
+=== v9.3.7 (November 8, 2023)
+
+* Add note on applying plugin in multi-project builds to user guide - {uri-github}/pull/1202[PR 1202]
+
+[discrete]
+=== v9.3.6 (October 27, 2023)
+
+* Upgrade ASM to 9.6 - {uri-github}/pull/1200[PR 1200]
+
+[discrete]
+=== v9.3.5 (October 26, 2023)
+
+* Upgrade Docker Java to 3.3.3 - {uri-github}/pull/1199[PR 1199]
+
+[discrete]
+=== v9.3.4 (October 1, 2023)
+
+* Credentials provided by extension need to override credentials in store - {uri-github}/pull/1196[PR 1196]
+
+[discrete]
+=== v9.3.3 (September 20, 2023)
+
+* Make DockerRemoteApi plugin configuration cache compatible for Gradle 8.1+ - {uri-github}/pull/1193[PR 1193]
+
+[discrete]
+=== v9.3.2 (July 31, 2023)
+
+* Fail build upon error with push operation - {uri-github}/pull/1183[PR 1183]
+* Upgrade Docker Java to 3.3.2 - {uri-github}/pull/1187[PR 1187]
+* Upgrade ASM to 9.5 - {uri-github}/pull/1188[PR 1188]
+
+[discrete]
+=== v9.3.1 (April 8, 2023)
+
+* Revert automatically setting JAVA_OPTS environment variable - {uri-github}/pull/1176[PR 1176]
+
+[discrete]
+=== v9.3.0 (March 20, 2023)
+
+* Introduce property for setting a USER instruction in convention plugin extension - {uri-github}/pull/1166[PR 1166]
+* Add JAVA_OPTS to entrypoint instruction - {uri-github}/pull/1167[PR 1167]
+* Allow for setting platform for Dockerfile task - {uri-github}/pull/1170[PR 1170]
+* Upgrade Docker Java to 3.3.0 - {uri-github}/pull/1171[PR 1171]
+
+[discrete]
+=== v9.2.1 (February 7, 2023)
+
+* Correct input annotation for `imageFile` property of DockerLoadImage task - {uri-github}/pull/1164[PR 1164]
+* Fix NullPointer on docker hosts with <none> tags in DockerSaveImage task - {uri-github}/pull/1163[PR 1163]
+
+[discrete]
+=== v9.2.0 (January 31, 2023)
+
+* Revert shading of Docker Java - {uri-github}/pull/1154[PR 1154]
+* Writer type is not compatible with configuration cache - {uri-github}/pull/1155[PR 1155]
+* Assign correct annotation for DockerCopyFileToContainer property - {uri-github}/pull/1156[PR 1156]
+* Deprecate `withCommand` methods for DockerExecContainer task - {uri-github}/pull/1161[PR 1161]
+
+[discrete]
+=== v9.1.0 (December 20, 2022)
+
+* Fix shading of Docker Java and its transitive dependencies - {uri-github}/pull/1144[PR 1144]
+* Upgrade to Docker Java to 3.2.14 - {uri-github}/pull/1142[PR 1142]
+* Don't use `set` method to define task default property values - {uri-github}/pull/1124[PR 1124]
+* Convert production source code from Groovy to Java - {uri-github}/pull/1117[PR 1117]
+
+[discrete]
+=== v9.0.1 (November 16, 2022)
+
+* Correct links in user guide that point to outdated API docs - {uri-github}/pull/1122[PR 1122]
+
+[discrete]
+=== v9.0.0 (November 12, 2022)
+
+* Configuration cache support - {uri-github}/issues/1102[Issue 1102]
+* Support Java up to version 20 with latest ASM library - {uri-github}/pull/1107[PR 1107]
+* Introduce extension attribute for setting program arguments in convention plugins - {uri-github}/pull/1105[PR 1105]
+* **Breaking Change!** Expose repository and tag properties for DockerCommitImage task - {uri-github}/pull/1101[PR 1101]
+* Support auto-detection DOCKER_HOST on macOS Ventura with latest Docker Desktop - {uri-github}/pull/1111[PR 1111]
+
+[discrete]
+=== v8.1.0 (September 20, 2022)
+
+* Fix custom registry in logs for `DockerPullImage` and `DockerPushImage` tasks - {uri-github}/pull/1091[PR 1091]
+* Add "add" and "drop" host config capability to `DockerCreateContainer` task - {uri-github}/pull/1087[PR 1087]
+* Split end user and developer guides - {uri-github}/pull/1089[PR 1089]
+
+[discrete]
+=== v8.0.0 (August 9, 2022)
+
+* Make `DockerSaveImage` task out of date if the input state on the daemon changed - {uri-github}/pull/1073[PR 1073]
+* Proper handling of `onNext` callbacks in `DockerLogsContainer` task - {uri-github}/pull/1083[PR 1083]
+* Close `InputStream` to avoid too many file handles when searching for main class - {uri-github}/pull/1081[PR 1081]
+* Support multiple images for `DockerSaveImage` task - {uri-github}/pull/1069[PR 1069]
+* Add IPAM configuration for a network in `DockerCreateNetwork` task - {uri-github}/pull/1080[PR 1080]
+* Make `DockerBuildImage` task out-of-date if configured tags are missing - {uri-github}/pull/1072[PR 1072]
+* Add support for docker tmpfs mounts in `DockerCreateContainer` task - {uri-github}/pull/1036[PR 1036]
+* Upgrade to Gradle 7, use version catalog - {uri-github}/pull/1075[PR 1075]
+* Use a stable tag for OpenJDK base image - {uri-github}/pull/1074[PR 1074]
+
+[discrete]
+=== v7.4.0 (May 23, 2022)
+
+* Credentials in the `config.json` are overwritten by default (but unset) auth-config - {uri-github}/pull/1065[PR 1065]
+* DockerBuildImage task creates image ID file and parent directory if it doesn't exist - {uri-github}/pull/1064[PR 1064]
+
+[discrete]
+=== v7.3.0 (March 1, 2022)
+
+* Upgrade to Docker Java 3.2.13 - {uri-github}/pull/1058[PR 1058]
+* Fix images property in DockerSpringBootApplication javadoc - {uri-github}/pull/1057[PR 1057]
+* Introduce memory property in `DockerBuildImage` custom task - {uri-github}/pull/1053[PR 1053]
+
+[discrete]
+=== v7.2.0 (January 6, 2022)
+
+* Upgrade to Docker Java 3.2.12 - {uri-github}/pull/1042[PR 1042]
+* Better transparency for the generated Dockerfile in user guide - {uri-github}/pull/1028[PR 1028]
+
+[discrete]
+=== v7.1.0 (June 28, 2021)
+
+* Upgrade to Docker Java 3.2.10 - {uri-github}/pull/1025[PR 1025]
+* Introduce platform parameter for build image task - {uri-github}/pull/1024[PR 1024]
+* Introduce platform parameter for create container task - {uri-github}/pull/1026[PR 1026]
+
+[discrete]
+=== v7.0.1 (June 9, 2021)
+
+* Reduce Docker Java dependency size - {uri-github}/pull/1016[PR 1016]
+* Bump ASM opcode version for JVM convention plugins - {uri-github}/pull/1012[PR 1012]
+* Improve Groovydoc documentation of Dockerfile task - {uri-github}/pull/1017[PR 1017]
+
+[discrete]
+=== v7.0.0 (May 2, 2021)
+
+* **Breaking Change!** Change source and target compatibility of plugin to Java 11
+* **Breaking Change!** Correct method signature of `Dockerfile.addFile(Dockerfile.File file)` - {uri-github}/issues/990[Issue 990]
+* Preserve documentation per version - {uri-github}/pull/998[PR 998]
+* Upgrade ASM for JDK 16 support - {uri-github}/pull/1002[PR 1002]
+* **Breaking Change!** Upgrade image to Java 11 for convention plugins - {uri-github}/pull/1006[PR 1005]
+* **Breaking Change!** Upgrade to Docker Java 3.2.8 - {uri-github}/pull/1006[PR 1005]
+* **Breaking Change!** Remove extra tasks - {uri-github}/pull/1004[PR 1004]
+* Publish plugin artifacts Gradle Plugin Portal instead of Bintray JCenter - {uri-github}/pull/1001[PR 1001]
+* Explicitly spell out fully qualified class references to inner classes `Dockerfile.File` and `Dockerfile.CopyFile` - {uri-github}/pull/997[PR 997]
+
+[discrete]
+=== v6.7.0 (January 10, 2021)
+
+* Turn on RegistryAuthLocator for Windows - {uri-github}/pull/974[PR 974]
+* Handle missing ServerURL from auth helper response - {uri-github}/pull/959[PR 959]
+* Add support for health check in DockerCreateContainer custom task - {uri-github}/pull/978[PR 978]
+* Deprecate extra tasks - {uri-github}/pull/981[PR 981]
+* Remove Netty exec factory support - {uri-github}/pull/963[PR 963]
+
+[discrete]
+=== v6.6.1 (July 29, 2020)
+
+* Mapping of DSL property images should propagate down to build and push task in convention plugins - {uri-github}/pull/956[PR 956]
+
+[discrete]
+=== v6.6.0 (July 16, 2020)
+
+* Use configuration avoidance API in convention plugins - {uri-github}/pull/940[PR 940]
+* Configured registry credentials in build script should take precedence over Docker credential helper - {uri-github}/pull/945[PR 945]
+
+[discrete]
+=== v6.5.0 (July 3, 2020)
+
+* Default to Docker Hub when no registry is explicitly given - {uri-github}/pull/942[PR 942]
+* Upgrade of Docker Java library to version 3.2.5 and default to communication transport to Apache HttpClient 5 - {uri-github}/pull/942[PR 942]
+
+[discrete]
+=== v6.4.0 (March 23, 2020)
+
+* Keep the network name and network ID separate in `DockerCreateNetwork` - {uri-github}/pull/920[PR 920]
+* Upgrade ASM dependency to Java 13/14-compatible version - {uri-github}/pull/929[PR 929]
+
+[discrete]
+=== v6.3.0 (March 14, 2020)
+
+* Retrieve all known credentials for `DockerBuildImage` custom task - {uri-github}/pull/913[PR 913]
+* Add support for setting custom workingDir in `DockerExecContainer` task - {uri-github}/pull/927[PR 927]
+
+[discrete]
+=== v6.2.0 (March 10, 2020)
+
+* Upgrade Docker Java to next minor version - {uri-github}/pull/925[PR 925]
+* Expose property for providing extra hosts - {uri-github}/pull/926[PR 926]
+
+[discrete]
+=== v6.1.4 (February 23, 2020)
+
+* Nested property `FileInstruction.getFile()` renders warning as it doesn't provide input or output annotation - {uri-github}/issues/919[Issue 919]
+
+[discrete]
+=== v6.1.3 (January 26, 2020)
+
+* Credentials helper JSON output parsing falls back to default if it cannot be read properly - {uri-github}/pull/909[PR 909]
+
+[discrete]
+=== v6.1.2 (January 14, 2020)
+
+* Decode base64 auth header - {uri-github}/pull/902[PR 902]
+
+[discrete]
+=== v6.1.1 (December 12, 2019)
+
+* Add debug logging in Docker configuration parsing - {uri-github}/pull/898[PR 898]
+
+[discrete]
+=== v6.1.0 (December 12, 2019)
+
+* Allow configuring the main class name for convention plugins - {uri-github}/pull/892[PR 892]
+* Do not parse config file if it doesn't exist - {uri-github}/issues/887[Issue 887]
+
+[discrete]
+=== v6.0.0 (November 16, 2019)
+
+* **Breaking Change!** Multi-tag support for push operation and convention plugins - {uri-github}/pull/867[PR 867]
+* **Breaking Change!** Renamed property `tags` to `images` for extensions `DockerJavaApplication` and `DockerSpringBootApplication`.
+* **Breaking Change!** Renamed property `tag` to `image` for custom tasks `DockerBuildImage`, `DockerCommitImage`, `DockerPullImage`, `DockerSaveImage`, `DockerListImages`,`DockerCreateContainer`.
+* **Breaking Change!** Removal of method `DockerPullImage.getImageId()`. Use `DockerPullImage.getImage()` instead.
+* **Breaking Change!** Host-related configuration properties in `DockerCreateContainer` have been moved to nested property for better maintainability - {uri-github}/pull/873[PR 873]
+* Add properties `ipcMode` and `sysctls` to `DockerCreateContainer` - {uri-github}/pull/862[PR 862]
+* Gradle 6.0 compatibility fixes - {uri-github}/pull/869[PR 869]
+* Improve DSL for configuring registry credentials for custom tasks - {uri-github}/pull/879[PR 879]
+* Plugin resolves and uses Docker credential helper - {uri-github}/pull/865[PR 865]
+* Upgrade of Docker Java library to version 3.1.5
+
+[discrete]
+=== v5.3.0 (October 30, 2019)
+
+* Expose project-prop/sys-prop/env-var to optionally use netty-exec-cmd-factory - {uri-github}/pull/876[PR 876]
+
+[discrete]
+=== v5.2.0 (October 5, 2019)
+
+* **Potentially Breaking Change!** Remove duplicated code in convention plugins - {uri-github}/pull/864[PR 864]
+* Restore compatibility with Gradle 5.1 as runtime version - {uri-github}/issue/866[Issue 866]
+
+[discrete]
+=== v5.1.0 (September 18, 2019)
+
+* **Potentially Breaking Change!** Remove remaining use of Application Plugin in convention plugins - {uri-github}/pull/852[PR 852]
+
+[discrete]
+=== v5.0.0 (August 13, 2019)
+
+* **Breaking Change!** Remove exec/cmd hooks in Docker application plugin - {uri-github}/pull/806[PR 806]
+* **Breaking Change!** API cleanup of Dockerfile task - {uri-github}/pull/812[PR 812]
+* **Breaking Change!** Removed `ItemJoiner` from public API - {uri-github}/pull/836[PR 836]
+* Respect symlinks in build context - {uri-github}/issue/837[Issue 837]
+
+[discrete]
+=== v4.10.0 (June 12, 2019)
+
+* Expose `target` property for BuildImageTask - {uri-github}/pull/813[PR 813]
+* Remove final from DockerBuildImage.labels property - {uri-github}/pull/823[PR 823]
+* Always set imageId within DockerBuildImage on success - {uri-github}/pull/819[PR 819]
+
+[discrete]
+=== v4.9.0 (May 25, 2019)
+
+* Avoid memory leakage by replacing addShutdownHook with Gradle.buildFinished - {uri-github}/pull/810[PR 810]
+* `DockerBuildImage` will print whole lines by collecting output and waiting for newline - {uri-github}/pull/799[PR 799]
+* `DockerBuildImage` reinstated ImageId output file and check in Docker registry - {uri-github}/pull/807[PR 807]
+
+[discrete]
+=== v4.8.1 (May 11, 2019)
+
+* Introduce `maintainer` property to extension of Spring Boot application plugin - {uri-github}/issues/779[Issue 779]
+* **Breaking Change!** Removed `RepositoriesFallbackPlugin` that was applied automatically - {uri-github}/issues/794[Issue 794]
+* **Breaking Change!** The Docker client in `AbstractDockerRemoteApiTask` is not inject into the method `runRemoteCommand` anymore - {uri-github}/issues/802[Issue 802]
+
+[discrete]
+=== v4.8.0 (April 22, 2019)
+
+* Expose extension property for configuring JVM arguments - {uri-github}/pull/790[PR 790]
+
+[discrete]
+=== v4.7.1 (April 13, 2019)
+
+* **Breaking Change!** The existing field `timeout` in custom tasks had to be renamed due to https://docs.gradle.org/5.0/userguide/more_about_tasks.html#sec:task_timeouts[Gradle's 5.0 built-in timeout feature] and has been replaced with `waitTime`.
+
+[discrete]
+=== v4.7.0 (April 9, 2019)
+
+* Tasks created by convention plugins should assign a task group - {uri-github}/issues/768[Issue 768]
+* Main class detection should work with a Kotlin-based application - {uri-github}/issues/766[Issue 766]
+* Fix gradle `5.x` deprecation warnings - {uri-github}/issues/782[Issue 782]
+* Bump `docker-java` to `3.1.2` - {uri-github}/issues/787[Issue 787]
+
+[discrete]
+=== v4.6.2 (March 9, 2019)
+
+* Add shaded JAF dependency to simplify usage of plugin with Java 11 - {uri-github}/issues/764[Issue 764]
+
+[discrete]
+=== v4.6.1 (March 6, 2019)
+
+* Fix setting binds in `DockerCreateContainer` task - {uri-github}/issues/758[Issue 758]
+
+[discrete]
+=== v4.6.0 (March 3, 2019)
+
+* **Breaking Change!** Plugin declares and uses Docker Java as runtime library - {uri-github}/pull/751[PR 751]
+* **Breaking Change!** Custom task `DockerClient` has been renamed to `DockerOperation` to avoid conflicting Docker Java class name
+* Shade plugin dependencies except Docker Java - {uri-github}/pull/755[PR 755]
+
+[discrete]
+=== v4.5.0 (February 19, 2019)
+
+* `Dockerfile.FileInstruction` does not use flags if `Dockerfile.File` is passed in using a `Provider` - {uri-github}/pull/753[PR 753]
+* Inline main class finder and avoid explicit dependency on Spring Boot - {uri-github}/pull/752[PR 752]
+
+[discrete]
+=== v4.4.1 (February 5, 2019)
+
+* Cannot set publishAll property without error - {uri-github}/pull/742[PR 742]
+
+[discrete]
+=== v4.4.0 (January 31, 2019)
+
+* **Breaking Change!** Define image with more fine-grained image layers - {uri-github}/pull/736[PR 736]
+* Bump _docker-java-shaded_ to latest version - {uri-github}/pull/729[PR 729]
+* Task `DockerCreateContainer` gained option `groups` - {uri-github}/pull/731[Pull Request 731]
+
+[discrete]
+=== v4.3.0 (January 12, 2019)
+
+* **Breaking Change!** The task `DockerLoadImage` should use `Provider` type for image file
+* **Breaking Change!** Use the default value `$buildDir/docker` for `DockerBuildImage.inputDir` to align with the default directory of the `Dockerfile` task
+* **Breaking Change!** Align task names in `DockerJavaApplicationPlugin` with the ones from the `DockerSpringBootApplicationPlugin`
+* Examples in user guide that demonstrate the creation of a custom Docker task and the modification of existing `Dockerfile` instructions
+
+[discrete]
+=== v4.2.0 (December 16, 2018)
+
+* Applying the Docker Spring Boot application plugin with the plugins DSL should not fail - {uri-github}/issues/702[Issue 702]
+* **Breaking Change!** Remove all deprecations - {uri-github}/issues/675[Issue 675]
+** Removed `DockerCreateContainer.env`, replaced by `DockerCreateContainer.envVars`
+** Removed `DockerBuildImage.tag`, replaced by `DockerBuildImage.tags`
+** Removed `DockerExecContainer.cmd`, replaced by `DockerExecContainer.commands`
+** Removed `DockerExecContainer.execId`, replaced by `DockerExecContainer.execIds`
+* `DockerBuildImage.tags.add/addAll` only work after using `tags.set` - {uri-github}/issues/712[Issue 712]
+* User guide sample on Docker `links` should not use `doFirst` - {uri-github}/issues/715[Issue 715]
+* `DockerCommitImage` task should not fail when accessing container ID property value - {uri-github}/issues/718[Issue 718]
+
+[discrete]
+=== v4.1.0 (November 29, 2018)
+
+* Ensure compatibility with Gradle 5.0 - {uri-github}/pull/693[Pull Request 709]
+* **Breaking Change!** The existing field `timeout` in custom tasks had to be renamed due to https://docs.gradle.org/5.0/userguide/more_about_tasks.html#sec:task_timeouts[Gradle's 5.0 built-in timeout feature]
+
+[discrete]
+=== v4.0.5 (November 22, 2018)
+
+* Avoid the use of application plugin extension to ensure compatibility - {uri-github}/issues/706[Issue 706]
+
+[discrete]
+=== v4.0.4 (November 4, 2018)
+
+* Implementation to make `DockerBuildImage` task incremental and cacheable is not sufficient - {uri-github}/issues/697[Issue 697]
+
+[discrete]
+=== v4.0.3 (October 30, 2018)
+
+* Correctly handle the case where `inputDir` is not where `dockerFile` is located - {uri-github}/pull/693[Pull Request 693]
+
+[discrete]
+=== v4.0.2 (October 27, 2018)
+
+* Output file name containing the image ID created by `DockerBuildImage` should work on Windows - {uri-github}/pull/690[Pull Request 690]
+
+[discrete]
+=== v4.0.1 (October 20, 2018)
+
+* Returned image ID for a `DockerBuildImage` task should never be null - {uri-github}/pull/687[Pull Request 687]
+
+[discrete]
+=== v4.0.0 (October 12, 2018)
+
+* **Breaking Change!** Use `Provider` concept throughout to support lazy evaluation via public API - {uri-github}/pull/659[Pull Request 659]
+* **Breaking Change!** Consumers of this plugin will have to use Java 8 or higher - {uri-github}/pull/676[Pull Request 676]
+* **Breaking Change!** Removal of `AbstractReactiveStreamsTask` from inherited custom task hierarchy
+* __NEW__ Add tested, multi-lingual user guide - {uri-github}/pull/677[Pull Request 677]
+* __NEW__ Make `DockerBuildImage` task incremental and cacheable - {uri-github}/pull/672[Pull Request 672]
+* Introduce method for translating username/password into a PasswordCredentials - {uri-github}/pull/668[Pull Request 668]
+* Add `@CompileStatic` to much of the code base that can support it - {uri-github}/pull/676[Pull Request 676]
+* Use appropriate types for Groovy/Kotlin DSL interoperability for reactive streams functionality - {uri-github}/pull/678[Pull Request 678]
+
+[discrete]
+=== v3.6.2 (October 2, 2018)
+
+* `DockerCreateContainer` gained `pid` option - {uri-github}/pull/652[Pull Request 652]
+* `Dockerfile` validation takes into account comments - {uri-github}/issues/657[Issue 657]
+* Bump `docker-java-shaded` to `rc-5` - {uri-github}/issues/660[Issue 660]
+* `DockerBuildImage` gained `network` option - {uri-github}/issues/608[Issue 608]
+* `DockerCreateContainer` gained `autoRemove` option - {uri-github}/issues/639[Issue 639]
+
+[discrete]
+=== v3.6.1 (August 21, 2018)
+
+* Task `DockerClient`, and the passed dockerClient object, is now cached by configuration - {uri-github}/pull/644[Pull Request 644]
+* Task `DockerBuildImage` gained option `cacheFrom` - {uri-github}/pull/646[Pull Request 646]
+
+[discrete]
+=== v3.6.0 (August 7, 2018)
+
+* Use smaller base images for convention plugins - {uri-github}/pull/636[Pull Request 636]
+* Fully deprecate MAINTAINER instruction and replace with LABEL - {uri-github}/pull/635[Pull Request 635]
+* Make Dockerfile task cacheable via Gradle build cache - {uri-github}/pull/641[Pull Request 641]
+
+[discrete]
+=== v3.5.0 (July 24, 2018)
+
+* Support for dockerizing Spring Boot applications - {uri-github}/pull/619[Pull Request 619]
+* Removed deprecated `ResponseHandler` - {uri-github}/pull/624[Pull Request 624]
+* Introduce user guide for more readable, maintainable documentation - {uri-github}/pull/630[Pull Request 630]
+* Upgrade to Gradle Wrapper 4.9
+
+[discrete]
+=== v3.4.4 (July 15, 2018)
+
+* Task `DockerLivenessContainer` had its polling logic reworked to be more failure proof.
+
+[discrete]
+=== v3.4.3 (July 8, 2018)
+
+* Task `DockerCreateContainer` has its method `withEnvVars` changed to accept a `def`, which in turn can be anything (String, Integer, Closure, etc) but will eventually have all its keys/values resolved to java strings. - {uri-github}/pull/616[Pull Request 617]
+* Task `DockerLivenessContainer` had minor verbiage changes to its output. - {uri-github}/pull/616[Pull Request 617]
+* Use `-all` wrapper to better integrate with IDE's. - {uri-github}/pull/616[Pull Request 617]
+
+[discrete]
+=== v3.4.2 (July 7, 2018)
+
+* Shade cglib and its dependencies. - {uri-github}/pull/616[Pull Request 616]
+* Bump `docker-java` to `3.1.0-rc-3`. - {uri-github}/pull/616[Pull Request 616]
+
+[discrete]
+=== v3.4.1 (July 3, 2018)
+
+* BUGFIX for task `DockerCreateContainer` where `envs` were not being properly honored. - {uri-github}/pull/614[Pull Request 614]
+
+[discrete]
+=== v3.4.0 (July 1, 2018)
+
+* Task `Dockerfile` now supports multi-stage builds - {uri-github}/pull/607[Pull Request 607]
+* When plugin is applied to sub-projects we will additionally search rootProject for repos to use - {uri-github}/pull/610[Pull Request 610]
+* Task `DockerCreateContainer` has deprecated `env` in favor of `envVars` which can ONLY be added to with a helper method `withEnvVar` that can be called **N** times for setting environment variables. - {uri-github}/pull/609[Pull Request 609]
+* Task `DockerLivenessProbeContainer` has been renamed to `DockerLivenessContainer`. It's `probe` method has been renamed to `livnessProbe`. Task `DockerExecStopContainer` had its `probe` method renamed to `execStopProbe`. - {uri-github}/pull/611[Pull Request 611]
+
+[discrete]
+=== v3.3.6 (June 23, 2018)
+
+* Task `DockerCopyFileToContainer` can now copy **N** number of files via methods `withFile` and `withTarFile`. - {uri-github}/pull/605[Pull request 605]
+
+[discrete]
+=== v3.3.5 (June 17, 2018)
+
+* Fix bug within `DockerExecContainer` when `exitCode` can be null (default to 0 if so). - {uri-github}/pull/602[Pull request 602]
+
+[discrete]
+=== v3.3.4 (June 16, 2018)
+
+* Task `DockerExecContainer` gained ability to specify multiple execution commands to be run. - {uri-github}/pull/600[Pull request 600]
+* Various tasks had their progress logger output cleaned up. - {uri-github}/pull/601[Pull request 601]
+
+[discrete]
+=== v3.3.3 (June 8, 2018)
+
+* Explicitly call `toString()` on values in maps passed to Docker API. - {uri-github}/pull/595[Pull request 595]
+* Task `DockerLivenessProbeContainer` gained method `lastInspection()` which will return the last "docker inspect container" response AFTER execution has completed. - {uri-github}/pull/596[Pull request 596]
+
+[discrete]
+=== v3.3.2 (June 5, 2018)
+
+* Task `DockerLivenessProbeContainer` now has the `probe` option set to optional and if NOT defined will fallback to checking if container is in a running state. - {uri-github}/pull/594[Pull request 594]
+
+[discrete]
+=== v3.3.1 (June 2, 2018)
+
+* Various minor refactorings surrounding new task `DockerExecStopContainer`. - {uri-github}/pull/592[Pull request 592]
+
+[discrete]
+=== v3.3.0 (June 1, 2018)
+
+* Added task `DockerClient` to pass the raw `docker-java` client to the `onNext` closure if defined. - {uri-github}/pull/589[Pull request 589]
+* Task `DockerCreateContainer` will now log the `containerName` if set, which is the standard within this plugin, otherwise fallback to the just created `containerId`.
+* Task `DockerExecContainer` gained option `successOnExitCodes` to allow user to define a list of successful exit codes the exec is allowed to return and will fail if not in list. Default behavior is to do no check. - {uri-github}/pull/590[Pull request 590]
+* Added task `DockerLivenessProbeContainer` which will poll, for some defined amount of time, a running containers logs looking for a given message and fail if not found. - {uri-github}/pull/587[Pull request 587]
+* Added task `DockerExecStopContainer` to allow the user to execute an arbitrary cmd against a container, polling for it to enter a non-running state, and if that does not succeed in time issue stop request. - {uri-github}/pull/591[Pull request 591]
+
+[discrete]
+=== v3.2.9 (May 22, 2018)
+
+* Fixed a bug in task `DockerCreateContainer` where option `cpuset` is now renamed differently in `docker-java`. - {uri-github}/pull/585[Pull request 585]
+
+[discrete]
+=== v3.2.8 (April 30, 2018)
+
+* Task `DockerExecContainer` gained option `user` to specify a user/group. - {uri-github}/pull/574[Pull request 574]
+* Task `DockerCreateContainer` gained option `ipV4Address` to specify a specific ipv4 address to use. - {uri-github}/pull/449[Pull request 449]
+* Bump gradle to `4.7`. - {uri-github}/pull/578[Pull request 578]
+
+[discrete]
+=== v3.2.7 (April 19, 2018)
+
+* Task `DockerSaveImage` gained option `useCompression` to optionally gzip the created tar. - {uri-github}/pull/565[Pull request 565]
+* Add `javax.activation` dependency for users who are working with jdk9+. - {uri-github}/pull/572[Pull request 572]
+
+[discrete]
+=== v3.2.6 (March 31, 2018)
+
+* Cache `docker-java` client instead of recreating for every request/task invocation. This is a somewhat big internal change but has a lot of consequences and so it was deserving of its own point release. - {uri-github}/pull/558[Pull request 558]
+
+[discrete]
+=== v3.2.5 (March 2, 2018)
+
+* Added `macAddress` option to task `DockerCreateContainer` - {uri-github}/pull/538[Pull request 538]
+* Initial work for `codenarc` analysis - {uri-github}/pull/537[Pull request 537]
+* Use of `docker-java-shaded` library in favor of `docker-java` proper to get around class-loading/clobbering issues - {uri-github}/pull/550[Pull request 550]
+* Honor DOCKER_CERT_PATH env var if present - {uri-github}/pull/549[Pull request 549]
+* Task `DockerSaveImage` will now create file for you should it not exist - {uri-github}/pull/552[Pull request 552]
+* Task `DockerPushImage` will now include tag info in logging if applicable - {uri-github}/pull/554[Pull request 554]
+* !!!!! BREAKING: Property `inputStream` of task `DockerLoadImage` has been changed from type `InputStream` to `Closure<InputStream>`. This was done to allow scripts/code/pipelines to delay getting the image and side-step this property getting configured during gradles config-phase. - {uri-github}/pull/552[Pull request 552]
+
+[discrete]
+=== v3.2.4 (February 5, 2018)
+
+* Use openjdk as a default image in DockerJavaApplicationPlugin - {uri-github}/pull/528[Pull request 528]
+* Add `skipMaintainer` to `DockerJavaApplication` - {uri-github}/pull/529[Pull request 529]
+* Can now define `labels` in `DockerCreateContainer` task - {uri-github}/pull/530[Pull request 530]
+* Added task `DockerRenameContainer` - {uri-github}/pull/533[Pull request 533]
+
+[discrete]
+=== v3.2.3 (January 26, 2018)
+
+* If `DockerWaitHealthyContainer` is run on an image which was not built with `HEALTHCHECK` than fallback to using generic status - {uri-github}/pull/520[Pull request 520]
+
+[discrete]
+=== v3.2.2 (January 17, 2018)
+
+* Bump gradle to `4.3.1` - {uri-github}/pull/500[Pull request 500]
+* Bug fix for {uri-github}/issues/490[Issue 490] wherein `on*` reactive-stream closures are evaluated with null exception when using gradle-4.3 - {uri-github}/commit/93b80f2bd18c4f04d0f58443b45c59cb58a54e77[Commit 93b80f]
+* Support for zero exposed ports in `DockerJavaApplication` - {uri-github}/pull/504[Pull request 504]
+
+[discrete]
+=== v3.2.1 (November 22, 2017)
+
+* Bump gradle to `4.2` - {uri-github}/pull/471[Pull request 471]
+* Fix setting `shmSize` when creating container - {uri-github}/pull/480[Pull request 480]
+* Add support for entrypoint on `DockerCreateContainer` - {uri-github}/pull/479[Pull request 479]
+* Bump verison of docker-java to 3.0.14 - {uri-github}/pull/482[Pull request 482]
+* Added `DockerWaitHealthyContainer` task - {uri-github}/pull/485[Pull request 485]
+* Use groovy join function in favor or jdk8 join function. - {uri-github}/pull/498[Pull request 498]
+
+[discrete]
+=== v3.2.0 (September 29, 2017)
+
+* Update `createBind` to use docker-java `parse` method - {uri-github}/pull/452[Pull request 452]
+* Allow Docker to cache app libraries dir when `DockerJavaApplication` plugin is used - {uri-github}/pull/459[Pull request 459]
+
+[discrete]
+=== v3.1.0 (August 21, 2017)
+
+* `DockerListImages` gained better support for filters - {uri-github}/pull/414[Pull request 414]
+* Use `alpine:3.4` image in functional tests - {uri-github}/pull/416[Pull request 416]
+* `DockerBuildImage` and `DockerCreateContainer` gained optional argument `shmSize` - {uri-github}/pull/413[Pull request 413]
+* Added tasks `DockerInspectNetwork`, `DockerCreateNetwork`, and `DockerRemoveNetwork` - {uri-github}/pull/422[Pull request 422]
+* Add statically typed methods for configuring plugin with Kotlin - {uri-github}/pull/426[Pull request 426]
+* Fix `Dockerfile` task up-to-date logic - {uri-github}/pull/433[Pull request 433]
+* Multiple ENVs are not set the same way as single ENV instructions - {uri-github}/pull/415[Pull request 415]
+* `DockerCreateContainer` changed optional input `networkMode` to `network` to better align with docker standatds - {uri-github}/pull/440[Pull request 440]
+* The first instruction of a Dockerfile has to be FROM except for Docker versions later than 17.05 - {uri-github}/pull/435[Pull request 435]
+* Bump verison of docker-java to 3.0.13 - {uri-github}/commit/b2d93671ed0a0b7177a450d503c28eca6aa6795d[Commit b2d936]
+
+[discrete]
+=== v3.0.10 (July 7, 2017)
+
+* Bump verison of docker-java to 3.0.12 - {uri-github}/pull/408[Pull request 408]
+* Publish javadocs on new release - {uri-github}/pull/405[Pull request 405]
+
+[discrete]
+=== v3.0.9 (July 4, 2017)
+
+* Bump verison of docker-java to 3.0.11 - {uri-github}/pull/403[Pull request 403]
+* New release process - {uri-github}/pull/402[Pull request 402]
+
+[discrete]
+=== v3.0.8 (June 16, 2017)
+
+* Task `DockerPullImage` gained method `getImageId()` which returns the fully qualified imageId of the image that was just pulled - {uri-github}/pull/379[Pull request 379]
+* Task `DockerBuildImage` gained property `tags` which allows for multiple tags to be specified when building an image - {uri-github}/pull/380[Pull request 380]
+* Task `DockerCreateContainer` gained property `networkAliases` - {uri-github}/pull/384[Pull request 384]
+
+[discrete]
+=== v3.0.7 (May 17, 2017)
+
+* Invoke onNext closures call() method explicitly - {uri-github}/pull/368[Pull request 368]
+* Adds new task DockerInspectExecContainer which allows to inspect exec instance - {uri-github}/pull/362[Pull request 362]
+* `functionalTest`'s can now run against a native docker instance - {uri-github}/pull/369[Pull request 369]
+* `DockerLogsContainer` now preserves leading space - {uri-github}/pull/370[Pull request 370]
+* Allow customization of app plugin entrypoint/cmd instructions - {uri-github}/pull/359[Pull request 359]
+* Task `Dockerfile` will no longer be forced as `UP-TO-DATE`, instead the onus will be put on developers to code this should they want this functionality. - {uri-github}/issues/357[Issue 357]
+* Now that `functionalTest`'s work natively, and in CI, add the test `started`, `passed` and `failed` logging messages so as to make it absolutely clear to users what is being run vs having no output at all. - {uri-github}/pull/373[Pull request 373]
+* Bump `docker-java` to v`3.0.10` - {uri-github}/pull/378[Pull request 378]
+
+[discrete]
+=== v3.0.6 (March 2, 2017)
+
+* Bump vof docker-java to 3.0.7 - {uri-github}/pull/331[Pull request 331]
+* Add support for label parameter on docker image creation - {uri-github}/pull/332[Pull request 332]
+
+[discrete]
+=== v3.0.5 (December 27, 2016)
+
+* Support multiple variables per singled ENV cmd - {uri-github}/pull/311[Pull request 311]
+* Implement a sane default docker URL based on environment - {uri-github}/pull/313[Pull request 313]
+* Implement https://github.com/reactive-streams/reactive-streams-jvm/#2-subscriber-code[reactive-stream] methods `onNext` and `onComplete` for all tasks - {uri-github}/pull/307[Pull request 307]
+
+[discrete]
+=== v3.0.4 (December 1, 2016)
+
+* Implement https://github.com/reactive-streams/reactive-streams-jvm/#2-subscriber-code[reactive-stream] method `onError` for all tasks - {uri-github}/pull/302[Pull request 302]
+* Bump docker-java to 3.0.6 - {uri-github}/pull/279[Pull request 279]
+
+[discrete]
+=== v3.0.3 (September 6, 2016)
+
+* Print error messages received from docker engine when build fails - {uri-github}/pull/265[Pull request 265]
+* Bump docker-java to 3.0.5 - {uri-github}/pull/263[Pull request 263]
+* Add support for `force` removal on `DockerRemoveImage` - {uri-github}/pull/266[Pull request 266]
+* Various fixes and cleanups as well default to alpine image for all functional tests - {uri-github}/pull/269[Pull request 269]
+* Added `editorconfig` file with some basic defaults - {uri-github}/pull/270[Pull request 270]
+
+[discrete]
+=== v3.0.2 (August 14, 2016)
+
+* Add support for build-time variables in `DockerBuildImage` task - {uri-github}/pull/240[Pull request 240]
+* Fix incorrect docker-java method name in `DockerCreateContainer` task - {uri-github}/pull/242[Pull request 242]
+* Can define devices on `DockerCreateContainer` task - {uri-github}/pull/245[Pull request 245]
+* Can now supply multiple ports when working with `docker-java-application` - {uri-github}/pull/254[Pull request 254]
+* Bump docker-java to 3.0.2 - {uri-github}/pull/259[Pull request 259]
+* If buildscript repos are required make sure they are added after evaluation - {uri-github}/pull/260[Pull request 260]
+
+[discrete]
+=== v3.0.1 (July 6, 2016)
+
+* Simplify Gradle TestKit usage - {uri-github}/pull/225[Pull request 225]
+* Ensure `tlsVerify` is set in addition to `certPath` for DockerClientConfig setup - {uri-github}/pull/230[Pull request 230]
+* Upgrade to Gradle 2.14.
+
+[discrete]
+=== v3.0.0 (June 5, 2016)
+
+* Task `DockerLogsContainer` gained attribute `sink` - {uri-github}/pull/203[Pull request 203]
+* Task `DockerBuildImage` will no longer insert extra newline as part of build output - {uri-github}/pull/206[Pull request 206]
+* Upgrade to docker-java 3.0.0 - {uri-github}/pull/217[Pull request 217]
+* Fallback to buildscript.repositories for internal dependency resolution if no repositories were defined - {uri-github}/pull/218[Pull request 218]
+* Added task `DockerExecContainer` - {uri-github}/pull/221[Pull request 221]
+* Added task `DockerCopyFileToContainer` - {uri-github}/pull/222[Pull request 222]
+* Task `DockerCreateContainer` gained attribute `restartPolicy` - {uri-github}/pull/224[Pull request 224]
+* Remove use of Gradle internal methods.
+* Added ISSUES.md file.
+* Upgrade to Gradle 2.13.
+
+[discrete]
+=== v2.6.8 (April 10, 2016)
+
+* Added task `DockerLogsContainer` - {uri-github}/pull/181[Pull request 181]
+* Bump docker-java to v2.3.3 - {uri-github}/pull/183[Pull request 183]
+* Bug fix when not checking if parent dir already exists before creating with `DockerCopyFileToContainer` - {uri-github}/pull/186[Pull request 186]
+* `DockerWaitContainer` now produces exitCode - {uri-github}/pull/189[Pull request 189]
+* `apiVersion` can now be set on `DockerExtension` and overriden on all tasks - {uri-github}/pull/182[Pull request 182]
+* Internal fix where task variables had to be defined - {uri-github}/pull/194[Pull request 194]
+
+[discrete]
+=== v2.6.7 (March 10, 2016)
+
+* Upgrade to Gradle 2.11.
+* Bug fix when copying single file from container and hostPath is set to directory for `DockerCopyFileFromContainer` - {uri-github}/pull/163[Pull request 163]
+* Step reports are now printed to stdout by default for `DockerBuildImage` - {uri-github}/pull/145[Pull request 145]
+* UP-TO-DATE functionality has been removed from `DockerBuildImage` as there were too many corner cases to account for - {uri-github}/pull/172[Pull request 172]
+
+[discrete]
+=== v2.6.6 (February 27, 2016)
+
+* Added docker step reports for `DockerBuildImage` - {uri-github}/pull/145[Pull request 145]
+* Added `onlyIf` check for `DockerBuildImage` - {uri-github}/pull/139[Pull request 139]
+* Added method logConfig for `DockerCreateContainer` - {uri-github}/pull/157[Pull request 157]
+* Various commands can now be passed closures for `Dockerfile` - {uri-github}/pull/155[Pull request 155]
+* Fix implementation of exposedPorts for `DockerCreateContainer` - {uri-github}/pull/140[Pull request 140]
+* Upgrade to Docker Java 2.2.2 - {uri-github}/pull/158[Pull request 158].
+
+[discrete]
+=== v2.6.5 (January 16, 2016)
+
+* Fix implementation of `DockerCopyFileFromContainer` - {uri-github}/pull/135[Pull request 135].
+* Add `networkMode` property to `DockerCreateContainer` - {uri-github}/pull/114[Pull request 114].
+* Upgrade to Docker Java 2.1.4 - {uri-github}/issues/138[Issue 138].
+
+[discrete]
+=== v2.6.4 (December 24, 2015)
+
+* Expose privileged property on `DockerCreateContainer` - {uri-github}/pull/130[Pull request 130].
+
+[discrete]
+=== v2.6.3 (December 23, 2015)
+
+* Expose force and removeVolumes properties on `DockerRemoveContainer` - {uri-github}/pull/129[Pull request 129].
+
+[discrete]
+=== v2.6.2 (December 22, 2015)
+
+* Expose support for LogDriver on `DockerCreateContainer` - {uri-github}/pull/118[Pull request 118].
+* Upgrade to Docker Java 2.1.2.
+
+[discrete]
+=== v2.6.1 (September 21, 2015)
+
+* Correct the `withVolumesFrom` call on `DockerCreateContainer` task which needs to get a `VolumesFrom[]` array as the parameter - {uri-github}/pull/102[Pull request 102].
+* Upgrade to Docker Java 2.1.1 - {uri-github}/pull/109[Pull request 109].
+
+[discrete]
+=== v2.6 (August 30, 2015)
+
+* Upgrade to Docker Java 2.1.0 - {uri-github}/pull/92[Pull request 92].
+_Note:_ The Docker Java API changed vastly with v2.0.0. The tasks `DockerBuildImage`, `DockerPullImage` and
+`DockerPushImage` do not provide a response handler anymore. This is a breaking change. Future versions of the plugin
+might open up the response handling again in some way.
+* `DockerListImages` with `filter` call a wrong function from `ListImagesCmdImpl.java` - {uri-github}/issues/105[Issue 105].
+
+[discrete]
+=== v2.5.2 (August 15, 2015)
+
+* Fix listImages task throwing GroovyCastException - {uri-github}/issues/96[Issue 96].
+* Add support for publishAll in DockerCreateContainer - {uri-github}/pull/94[Pull request 94].
+* Add optional dockerFile option to the DockerBuildImage task - {uri-github}/pull/47[Pull request 47].
+
+[discrete]
+=== v2.5.1 (July 29, 2015)
+
+* Adds Dockerfile support for the LABEL instruction - {uri-github}/pull/86[Pull request 86].
+* Usage of https://github.com/docker-java/docker-java[docker-java library] v1.4.0. Underlying API does not provide
+setting port bindings for task `DockerStartContainer` anymore. Needs to be set on `DockerCreateContainer`.
+
+[discrete]
+=== v2.5 (July 18, 2015)
+
+* Expose response handler for `DockerListImages` task - v[Issue 75].
+* Pass in credentials when building an image - {uri-github}/issues/76[Issue 76].
+
+[discrete]
+=== v2.4.1 (July 4, 2015)
+
+* Add `extraHosts` property to task `DockerCreateContainer` - {uri-github}/pull/79[Pull request 79].
+* Add `pull` property to task `DockerBuildImage` - {uri-github}/pull/78[Pull request 78].
+
+[discrete]
+=== v2.4 (May 16, 2015)
+
+* Added missing support for properties `portBindings` and `cpuset` in `CreateContainer` - {uri-github}/pull/66[Pull request 66].
+* Expose response handlers so users can inject custom handling logic - {uri-github}/issues/65[Issue 65].
+* Upgrade to Gradle 2.4 including all compatible plugins and libraries.
+
+[discrete]
+=== v2.3.1 (April 25, 2015)
+
+* Added support for `Binds` when creating containers - {uri-github}/pull/54[Pull request 54].
+* Added task for copying files from a container to a host - {uri-github}/pull/57[Pull request 57].
+
+[discrete]
+=== v2.3 (April 18, 2015)
+
+* Added task `DockerInspectContainer` - {uri-github}/pull/44[Pull request 44].
+* Added property `containerName` to task `DockerCreateContainer` - {uri-github}/pull/44[Pull request 44].
+* Allow for linking containers for task `DockerCreateContainer` - {uri-github}/pull/53[Pull request 53].
+* Usage of https://github.com/docker-java/docker-java[docker-java library] v1.2.0.
+
+[discrete]
+=== v2.2 (April 12, 2015)
+
+* Usage of https://github.com/docker-java/docker-java[docker-java library] v1.1.0.
+
+[discrete]
+=== v2.1 (March 24, 2015)
+
+* Renamed property `registry` to `registryCredentials` for plugin extension and tasks implementing `RegistryCredentialsAware` to better indicate its purpose.
+_Note:_ This is a breaking change.
+
+[discrete]
+=== v2.0.3 (March 20, 2015)
+
+* Allow for specifying port bindings for container start command. - {uri-github}/issues/30[Issue 30].
+* Throw an exception if an error response is encountered - {uri-github}/issues/37[Issue 37].
+* Upgrade to Gradle 2.3.
+
+[discrete]
+=== v2.0.2 (February 19, 2015)
+
+* Set source and target compatibility to Java 6 - {uri-github}/issues/32[Issue 32].
+
+[discrete]
+=== v2.0.1 (February 10, 2015)
+
+* Extension configuration method for `DockerJavaApplicationPlugin` needs to be registered via extension instance - {uri-github}/issues/28[Issue 28].
+
+[discrete]
+=== v2.0 (February 4, 2015)
+
+* Upgrade to Gradle 2.2.1 including all compatible plugins and libraries.
+
+[discrete]
+=== v0.8.3 (February 4, 2015)
+
+* Add project group to default tag built by Docker Java application plugin - {uri-github}/issues/25[Issue 25].
+
+[discrete]
+=== v0.8.2 (January 30, 2015)
+
+* Expose method for task `Dockerfile` for providing vanilla Docker instructions.
+
+[discrete]
+=== v0.8.1 (January 24, 2015)
+
+* Usage of https://github.com/docker-java/docker-java[docker-java library] v0.10.5.
+* Correctly create model instances for create container task - {uri-github}/issues/19[Issue 19].
+
+[discrete]
+=== v0.8 (January 7, 2014)
+
+* Allow for pushing to Docker Hub - {uri-github}/issues/18[Issue 18].
+* Better handling of API responses.
+* Note: Change to plugin extension. The property `docker.serverUrl` is now called `docker.url`. Instead of `docker.credentials`, you will need to use `docker.registry`.
+
+[discrete]
+=== v0.7.2 (December 23, 2014)
+
+* `Dockerfile` task is always marked UP-TO-DATE after first execution - {uri-github}/issues/13[Issue 13].
+* Improvements to `Dockerfile` task - {uri-github}/pull/16[Pull request 16].
+    * Fixed wrong assignment of key field in  environment variable instruction.
+    * Allow for providing multiple ports to the expose instruction.
+
+[discrete]
+=== v0.7.1 (December 16, 2014)
+
+* Fixed entry point definition of Dockerfile set by Java application plugin.
+
+[discrete]
+=== v0.7 (December 14, 2014)
+
+* Allow for properly add user-based instructions to Dockfile task with predefined instructions without messing up the order. - {uri-github}/issues/12[Issue 12].
+* Renamed task `dockerCopyDistTar` to `dockerCopyDistResources` to better express intent.
+
+[discrete]
+=== v0.6.1 (December 11, 2014)
+
+* Allow for setting path to certificates for communicating with Docker over SSL - {uri-github}/issues/10[Issue 10].
+
+[discrete]
+=== v0.6 (December 7, 2014)
+
+* Usage of https://github.com/docker-java/docker-java[docker-java library] v0.10.4.
+* Added Docker Java application plugin.
+* Better documentation.
+
+[discrete]
+=== v0.5 (December 6, 2014)
+
+* Fixed implementations of tasks `DockerPushImage` and `DockerCommitImage` - {uri-github}/issues/11[Issue 11].
+
+[discrete]
+=== v0.4 (November 27, 2014)
+
+* Added task for creating a Dockerfile.
+
+[discrete]
+=== v0.3 (November 23, 2014)
+
+* Usage of https://github.com/docker-java/docker-java[docker-java library] v0.10.3.
+* Changed package name to `com.bmuschko.gradle.docker`.
+* Changed group ID to `com.bmuschko`.
+* Adapted plugin IDs to be compatible with Gradle's plugin portal.
+
+[discrete]
+=== v0.2 (June 19, 2014)
+
+* Usage of https://github.com/docker-java/docker-java[docker-java library] v0.8.2.
+* Provide custom task type for push operation.
+* Support for using remote URLs when building image - {uri-github}/issues/3[Issue 3].
+
+[discrete]
+=== v0.1 (May 11, 2014)
+
+* Initial release.

@@ -1,0 +1,15 @@
+= Gradle Docker Plugin User Guide & Examples
+:uri-bmuschko-blog: https://bmuschko.com/blog
+:uri-ghpages: https://bmuschko.github.io/gradle-docker-plugin/{gradle-project-version}
+:uri-github: https://github.com/bmuschko/gradle-docker-plugin
+:uri-gradle-docs: https://docs.gradle.org/current
+
+include::00-intro.adoc[]
+
+include::10-remote-api-plugin.adoc[]
+
+include::20-java-application-plugin.adoc[]
+
+include::30-spring-boot-application-plugin.adoc[]
+
+include::40-changes.adoc[]

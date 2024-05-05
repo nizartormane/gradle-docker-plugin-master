@@ -1,0 +1,13 @@
+=== Usage
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/application-plugin/basic/groovy/build.gradle[tags=plugins]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/application-plugin/basic/kotlin/build.gradle.kts[tags=plugins]
+----

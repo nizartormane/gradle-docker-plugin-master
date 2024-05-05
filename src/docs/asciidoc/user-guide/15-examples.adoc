@@ -1,0 +1,139 @@
+[[remote-api-plugin-examples]]
+=== Examples
+
+The following usage examples demonstrate code for common use cases.
+More scenarios can be found in the {uri-github}/blob/master/src/functTest/groovy/com/bmuschko/gradle/docker/DockerWorkflowFunctionalTest.groovy[functional tests].
+
+==== Modifying Instructions of a Dockerfile Task
+
+Sometimes do you do not have any control over the creation of a `Dockerfile` task.
+For example the Docker <<java-application-plugin,Java Application Plugin>> already adds a `Dockerfile` task with a set of sensible instructions.
+You can still modify {uri-ghpages}/api/com/bmuschko/gradle/docker/tasks/image/Dockerfile.html#getInstructions()[those instructions] if needed.
+Let's say you are dealing with the following `Dockerfile` definition.
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/dockerfile-instructions/groovy/build.gradle[tag=existing-instructions]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/dockerfile-instructions/kotlin/build.gradle.kts[tag=existing-instructions]
+----
+
+Now, you may prefer a different base image than the one added by default.
+The listing below demonstrates how to find it the `FROM` instruction and replace it with a different one.
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/dockerfile-instructions/groovy/build.gradle[tag=modify-instruction]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/dockerfile-instructions/kotlin/build.gradle.kts[tag=modify-instruction]
+----
+
+You can also add new instructions at a specific position in the existing list of instructions.
+For example you may want to add a `HEALTHCHECK` to the end of the list.
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/dockerfile-instructions/groovy/build.gradle[tag=add-instruction]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/dockerfile-instructions/kotlin/build.gradle.kts[tag=add-instruction]
+----
+
+==== Creating a Dockerfile And Building an Image
+
+A Dockerfile can be created by the `Dockerfile` custom tasks.
+The Dockerfile instructions need to be declare in the correct
+order.
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/build-image/groovy/build.gradle[]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/build-image/kotlin/build.gradle.kts[]
+----
+
+==== Executing Functional Tests Against a Running Container
+
+The following example code demonstrates how to build a Docker image from a Dockerfile, starts up a container for this image and exercises functional tests against the running container.
+At the end of this operation, the container is stopped.
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/functional-test/groovy/build.gradle[]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/functional-test/kotlin/build.gradle.kts[]
+----
+
+==== Linking With Other Containers
+
+In many situations your container does not start without dependencies like database.
+In that case you may wish using traditional linking:
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/linking-containers/groovy/build.gradle[]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/linking-containers/kotlin/build.gradle.kts[]
+----
+
+==== Implementing Custom Docker Client Handling
+
+The plugin provides an opinionated set of custom tasks for the most common Docker operations.
+Sometime the situation may arise that you want to have full control over what you want to call on the Docker client.
+To do so you can implement your own custom task that extends from {uri-ghpages}/api/com/bmuschko/gradle/docker/tasks/AbstractDockerRemoteApiTask.html[AbstractDockerRemoteApiTask].
+The following example shows how to implement such a custom task:
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/custom-task-type/groovy/build.gradle[tag=task-type-definition]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/custom-task-type/kotlin/build.gradle.kts[tag=task-type-definition]
+----
+
+To use the custom task, simply create a task by type.
+
+[source,groovy,indent=0,subs="verbatim,attributes",role="primary"]
+.Groovy
+----
+include::{samplesCodeDir}/remote-api-plugin/custom-task-type/groovy/build.gradle[tag=task-type-usage]
+----
+
+[source,kotlin,indent=0,subs="verbatim,attributes",role="secondary"]
+.Kotlin
+----
+include::{samplesCodeDir}/remote-api-plugin/custom-task-type/kotlin/build.gradle.kts[tag=task-type-usage]
+----
